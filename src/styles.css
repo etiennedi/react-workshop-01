@@ -5,3 +5,8 @@
 body {
   padding: 15px 30px;
 }
+
+button {
+  padding: 10px;
+  -webkit-appearance: none;
+}
