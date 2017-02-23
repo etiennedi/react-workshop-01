@@ -1,7 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import FirstComponent from './FirstComponent';
+import './styles.css';
+
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <FirstComponent />,
   document.getElementById('app-root')
 );
