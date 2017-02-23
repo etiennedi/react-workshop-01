@@ -5,11 +5,7 @@ const FirstComponent =  () => (
   <div>
     <h1>Hello world!</h1>
     <p>
-      Has likes: <br />
-      <Likes likes={10} />
-    </p>
-    <p>
-      Has no likes: <br />
+      Click the button to increase likes: <br />
       <Likes />
     </p>
   </div>

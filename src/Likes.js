@@ -1,12 +1,28 @@
-import React from 'react';
-import BlueLikeButton from './BlueLikeButton';
-import GreyLikeButton from './GreyLikeButton';
+import React, { Component } from 'react';
+import LikeButton from './LikeButton';
 
-const Likes = ({likes}) => {
-  if (likes) {
-    return <BlueLikeButton />;
-  }
-  return <GreyLikeButton />;
+class Likes extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+          likes: 0,
+        }
+        this.handleClick = this.handleClick.bind(this);
+    }
+
+    handleClick() {
+      this.setState({
+        likes: this.state.likes + 1,
+      });
+    }
+
+    render() {
+        return (
+          <LikeButton
+            likes={this.state.likes}
+            onClick={this.handleClick}
+          />
+        );
+    }
 }
-
 export default Likes;
