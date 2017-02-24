@@ -12,6 +12,7 @@
   - once with likes > 0
   - once without likes
 
+
 ## Lesson 2
 
 - Remove the 'likes' prop from Likes component
@@ -21,3 +22,12 @@
 - Pass the click-handler to LikeButton
 - Make sure the Button components pass the click handler to the html element
 - Display the amount of likes inside the Button text
+
+## Lesson 3
+
+- Add propType validation for like button
+  - Modify one of the props and see the error in the browser
+- Add a default clickHandler to the LikeButton
+  - e.g. use a console.log or alert in the new default
+  - Temporarily remove the clickHandler passed from Likes and see the result
+
