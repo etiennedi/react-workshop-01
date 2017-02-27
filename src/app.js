@@ -1,10 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-// import YourRootComponent from './pathToYourRootComponent';
+import TodoApp from './TodoApp';
 
 ReactDOM.render(
-  // <YourRootComponent />,
-  // insert your root component here.
+  <TodoApp />,
   document.getElementById('app-root')
 );
