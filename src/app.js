@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import FirstComponent from './FirstComponent';
-import './styles.css';
+// import YourRootComponent from './pathToYourRootComponent';
 
 ReactDOM.render(
-  <FirstComponent />,
+  // <YourRootComponent />,
+  // insert your root component here.
   document.getElementById('app-root')
 );
