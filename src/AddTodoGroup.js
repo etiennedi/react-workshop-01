@@ -5,18 +5,19 @@ const propTypes = {
 }
 
 const AddTodoGroup = ({addTodo}) => (
-    <form onSubmit={
+    <form className="add-todo-group" onSubmit={
         e => {
             e.preventDefault();
             addTodo(e.target.addTodo.value);
             e.target.addTodo.value = "";
         }}>
         <input
+            className="add-todo-text"
             type="text"
             name="addTodo"
-            placeholder="Enter a todo title"
+            placeholder="Enter a todo title ..."
         />
-        <button>Submit</button>
+        <button className="add-todo-button">Add</button>
     </form>
 );
 

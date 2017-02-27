@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import './styles.css';
 import TodoList from './TodoList';
 import AddTodoGroup from './AddTodoGroup';
 
@@ -43,8 +44,8 @@ class TodoApp extends Component {
 
     render() {
         return (
-            <div>
-                <h1>TODO-App</h1>
+            <div className="todo-app">
+                <h1 className="headline">TODO-App</h1>
                 <AddTodoGroup addTodo={this.addTodo} />
                 <TodoList
                     todos={this.state.todos}

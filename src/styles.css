@@ -1,15 +1,127 @@
-* {
-  font-family: sans-serif;
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'BlinkMacSystemFont', -apple-system, BlinkMacSystemFont, sans-serif;
+  height: 100%;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
 }
 
 body {
   padding: 15px 30px;
+  background: #f0efe9;
+  color: #333;
 }
 
-button {
-  padding: 15px;
-  -webkit-appearance: none;
+.add-todo-button:focus,
+.checkbox:focus,
+.add-todo-text:focus {
+  outline: 0;
+}
+
+.headline {
+  text-align: center;
+  font-weight: normal;
+  color: #50e3a4;
+  margin: 0;
+  padding: 30px;
+}
+
+.todo-app {
+  max-width: 600px;
+  overflow: hidden;
+  background: #fff;
+  margin: 50px auto;
+  box-shadow: 0 3px 45px rgba(0,0,0,.05), 0 1px 3px rgba(0,0,0,.06);
+}
+
+.add-todo-group {
+  display: flex;
+  justify-content: space-between;
+  border-top: 2px solid #f3f3f3;
+  border-bottom: 2px solid #f3f3f3;
+}
+
+.add-todo-text {
+  flex-grow: 2;
+  padding: 15px 20px;
   border: 0;
-  border-radius: 5px;
-  font-size: large;
+  font-size: 16px;
+}
+
+.add-todo-button {
+  transition: all .3s ease;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0 20px;
+  color: #fff;
+  border: 0;
+  text-transform: uppercase;
+  background: #50e3a4;
+  cursor: pointer;
+}
+
+.add-todo-button:hover {
+  background: #47c791;
+}
+
+.todo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  border-bottom: 1px solid #f3f3f3;
+}
+
+.todo:last-child {
+  border: 0;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  transition: all .3s ease;
+  position: relative;
+  cursor: pointer;
+  min-width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 3px solid #f3f3f3;
+  margin-right: 20px;
+}
+
+.todo-checked .checkbox {
+  border-color: #50e3a4;
+}
+
+.todo-checked .checkbox:before {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  background: #50e3a4;
+}
+
+.todo-text {
+  transition: all .3s ease;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+.todo-checked .todo-text {
+  text-decoration: line-through;
+  opacity: .4;
+}
+
+.todo-delete {
+  margin-left: auto;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  color: #f44336;
 }

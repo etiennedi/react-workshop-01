@@ -9,20 +9,27 @@ const propTypes = {
 };
 
 const Todo = ({ completed, title, index, toggleTodo, deleteTodo }) => (
-    <div >
+    <div className={completed ? 'todo todo-checked' : 'todo'}>
         <input
+            className="checkbox"
             name={`todo_${index}`}
             type="checkbox"
             checked={completed}
             onClick={() => { toggleTodo(index) }}
         />
         <label
+            className="todo-text"
             htmlFor={`todo_${index}`}
             onClick={() => { toggleTodo(index) }}
         >
             {title}
         </label>
-        <button onClick={() => deleteTodo(index)}>Delete me!</button>
+        <button
+            className="todo-delete"
+            onClick={() => deleteTodo(index)}
+        >
+            ✕
+        </button>
     </div>
 
 );
