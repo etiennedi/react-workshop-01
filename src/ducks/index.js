@@ -5,7 +5,7 @@ import todos from './todos';
 
 export default combineReducers({
     filter,
-    toods,
+    todos,
 });
 
 
