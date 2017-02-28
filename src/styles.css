@@ -149,4 +149,5 @@ body {
 .filter-group .filter-active {
   background: #50e3a4;
   font-weight: bold;
+  color: #fff;
 }
