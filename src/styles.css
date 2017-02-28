@@ -17,7 +17,8 @@ body {
 
 .add-todo-button:focus,
 .checkbox:focus,
-.add-todo-text:focus {
+.add-todo-text:focus,
+.todo-delete:focus {
   outline: 0;
 }
 
