@@ -87,12 +87,12 @@ body {
   min-width: 24px;
   height: 24px;
   border-radius: 50%;
-  border: 3px solid #f3f3f3;
+  border: 3px solid #50e3a4;
   margin-right: 20px;
 }
 
 .todo-checked .checkbox {
-  border-color: #50e3a4;
+  border-color: #f3f3f3;
 }
 
 .todo-checked .checkbox:before {
@@ -103,7 +103,7 @@ body {
   top: 4px;
   left: 4px;
   border-radius: 50%;
-  background: #50e3a4;
+  background: #f3f3f3;
 }
 
 .todo-text {
