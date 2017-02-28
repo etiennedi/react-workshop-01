@@ -3,7 +3,7 @@ import React, { PropTypes } from 'react';
 import Todo from './Todo';
 
 const propTypes = {
-    todos: PropTypes.array,
+    todos: PropTypes.object,
     toggleTodo: PropTypes.func,
     deleteTodo: PropTypes.func,
 }
@@ -11,16 +11,18 @@ const propTypes = {
 const TodoList = ({todos, toggleTodo, deleteTodo}) => (
     <div>
         {
-            todos.map((todo, index) => (
-                <Todo
-                    key={index}
-                    completed={todo.completed}
-                    title={todo.title}
-                    index={index}
-                    toggleTodo={toggleTodo}
-                    deleteTodo={deleteTodo}
-                />
-            ))
+            Object.keys(todos)
+                .map(key => todos[key])
+                .map((todo, index) => (
+                    <Todo
+                        key={index}
+                        completed={todo.completed}
+                        title={todo.title}
+                        id={todo.id}
+                        toggleTodo={toggleTodo}
+                        deleteTodo={deleteTodo}
+                    />
+                ))
         }
     </div>
 );

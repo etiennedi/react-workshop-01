@@ -1,32 +1,32 @@
 import React, { PropTypes } from 'react';
 
 const propTypes = {
-    index: PropTypes.number,
+    id: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
     completed: PropTypes.bool,
     title: PropTypes.string,
     toggleTodo: PropTypes.func,
     deleteTodo: PropTypes.func,
 };
 
-const Todo = ({ completed, title, index, toggleTodo, deleteTodo }) => (
+const Todo = ({ completed, title, id, toggleTodo, deleteTodo }) => (
     <div className={completed ? 'todo todo-checked' : 'todo'}>
         <input
             className="checkbox"
-            name={`todo_${index}`}
+            name={`todo_${id}`}
             type="checkbox"
             checked={completed}
-            onClick={() => { toggleTodo(index) }}
+            onClick={() => { toggleTodo(id) }}
         />
         <label
             className="todo-text"
-            htmlFor={`todo_${index}`}
-            onClick={() => { toggleTodo(index) }}
+            htmlFor={`todo_${id}`}
+            onClick={() => { toggleTodo(id) }}
         >
             {title}
         </label>
         <button
             className="todo-delete"
-            onClick={() => deleteTodo(index)}
+            onClick={() => deleteTodo(id)}
         >
             ✕
         </button>
