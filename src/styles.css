@@ -69,6 +69,11 @@ body {
   background: #47c791;
 }
 
+.add-todo-button[disabled] {
+  background: #f3f3f3;
+  cursor:not-allowed;
+}
+
 .todo {
   display: flex;
   align-items: center;

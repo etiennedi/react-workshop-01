@@ -1,31 +1,55 @@
-import React, { PropTypes } from 'react';
+import React, { Component, PropTypes } from 'react';
 
 const propTypes = {
     addTodo: PropTypes.func,
 }
 
-const AddTodoGroup = ({addTodo}) => (
-    <form className="add-todo-group" onSubmit={
-        e => {
-            e.preventDefault();
-            const todo = e.target.addTodo.value;
+class AddTodoGroup extends Component {
+    constructor(props) {
+        super(props);
 
-            if(todo.trim() === '') {
-                alert('Please enter a todo title.');
-                return;
-            }
+        this.state = {
+            todoTitle: '',
+        }
 
-            addTodo(todo);
-            e.target.addTodo.value = "";
-        }}>
-        <input
-            className="add-todo-text"
-            type="text"
-            name="addTodo"
-            placeholder="Enter a todo title ..."
-        />
-        <button className="add-todo-button">Add</button>
-    </form>
-);
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange(e) {
+        this.setState({ todoTitle: e.target.value })
+    }
+
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.addTodo(this.state.todoTitle);
+        this.setState({ todoTitle: '' })
+    }
+
+    render() {
+
+        return (
+            <form
+                className="add-todo-group"
+                onSubmit={this.handleSubmit}
+            >
+                <input
+                    className="add-todo-text"
+                    type="text"
+                    name="addTodo"
+                    placeholder="Enter a todo title ..."
+                    value={this.state.todoTitle}
+                    onChange={this.handleInputChange}
+                />
+                <button
+                    disabled={!this.state.todoTitle}
+                    className="add-todo-button"
+                >
+                    Add {this.state.todoTitle}
+                </button>
+            </form>
+        );
+    }
+}
 
 export default AddTodoGroup;
