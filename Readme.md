@@ -74,5 +74,5 @@ To get started please checkout `origin/before-lesson-05`.
 - Add a `FilterGroup` with `FilterButton` components which can set the `filter` state
 - Depending on the filter state (declerative!), pass a filtered list to the `TodoList` component.
 
-*Note: To see how the form would look with a controlled component, checkout `lesson-06-with-controlled-component`*
+*Note: To see how the form would look with a controlled component, checkout `origin/lesson-06-with-controlled-component`*
 
