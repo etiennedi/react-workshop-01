@@ -63,4 +63,4 @@ To get started please checkout `origin/before-lesson-05`.
 - Tip: Centralize the state in the main component and keep all other components stateless.
   *Note: We'll learn about better state management later. For it's only important to respect the one-way data-flow.*
 - Tip: Don't worry about assigning ids right now. Since we don't support sorting or filtering yet, you can simple use the array index to modify/delete a todo.
-- **Remeber**: State is immutable. Don't accidentaly mutate the state. this.state.todos.push() is an anti-pattern! Props.todos.push is even worse! Think about data-flow in react apps.
+- **Remebmer**: State is immutable. Don't accidentaly mutate the state. this.state.todos.push() is an anti-pattern! Props.todos.push is even worse! Think about data-flow in react apps.
