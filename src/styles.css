@@ -77,10 +77,6 @@ body {
   border-bottom: 1px solid #f3f3f3;
 }
 
-.todo:last-child {
-  border: 0;
-}
-
 .checkbox {
   -webkit-appearance: none;
   transition: all .3s ease;
@@ -130,7 +126,6 @@ body {
 }
 
 .filter-group {
-  border-top: 2px solid #f3f3f3;
   padding: 20px;
   display: flex;
   justify-content: space-between;
