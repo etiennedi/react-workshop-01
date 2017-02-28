@@ -45,6 +45,8 @@
 
 ## Lesson 5
 
+To get started please checkout `origin/before-lesson-05`.
+
 ![](images/todoApp.png "Todo App after lesson 5") ![](images/todoAppHighlights.png "Todo App with components highlighted")
 
 
