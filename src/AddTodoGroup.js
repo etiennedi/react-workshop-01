@@ -8,7 +8,14 @@ const AddTodoGroup = ({addTodo}) => (
     <form className="add-todo-group" onSubmit={
         e => {
             e.preventDefault();
-            addTodo(e.target.addTodo.value);
+            const todo = e.target.addTodo.value;
+
+            if(todo.trim() === '') {
+                alert('Please enter a todo title.');
+                return;
+            }
+
+            addTodo(todo);
             e.target.addTodo.value = "";
         }}>
         <input
