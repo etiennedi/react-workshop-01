@@ -18,11 +18,10 @@ class TodoApp extends Component {
         this.toggleTodo = this.toggleTodo.bind(this);
         this.deleteTodo = this.deleteTodo.bind(this);
         this.addTodo = this.addTodo.bind(this);
-
     }
 
     toggleTodo(index) {
-        const todos = this.state.todos;
+        const todos = this.state.todos.slice(0);
         todos[index].completed = !todos[index].completed;
         this.setState({ todos })
     }
