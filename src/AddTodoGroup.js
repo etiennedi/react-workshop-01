@@ -1,10 +1,12 @@
+//@flow
+
 import React, { PropTypes } from 'react';
 
 const propTypes = {
-    addTodo: PropTypes.func,
+    addTodo: PropTypes.number,
 }
 
-const AddTodoGroup = ({addTodo}) => (
+const AddTodoGroup = ({addTodo} : {addTodo : Function}) => (
     <form className="add-todo-group" onSubmit={
         e => {
             e.preventDefault();
