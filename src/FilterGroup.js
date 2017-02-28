@@ -8,7 +8,7 @@ const propTypes = {
 }
 
 const FilterGroup = ({setFilter, currentFilter}) => (
-    <div>
+    <div className="filter-group">
         <FilterButton
             onClick={() => setFilter('all')}
             active={currentFilter === 'all'}

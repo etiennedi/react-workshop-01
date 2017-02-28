@@ -18,7 +18,8 @@ body {
 .add-todo-button:focus,
 .checkbox:focus,
 .add-todo-text:focus,
-.todo-delete:focus {
+.todo-delete:focus,
+.filter-group button:focus {
   outline: 0;
 }
 
@@ -126,4 +127,26 @@ body {
   cursor: pointer;
   font-size: 20px;
   color: #f44336;
+}
+
+.filter-group {
+  border-top: 2px solid #f3f3f3;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-group button {
+  cursor: pointer;
+  font-size: 14px;
+  border: 0;
+  padding: 10px 15px;
+  background: #f3f3f3;
+  border-radius: 20px;
+}
+
+.filter-group .filter-active {
+  background: #50e3a4;
+  font-weight: bold;
 }
