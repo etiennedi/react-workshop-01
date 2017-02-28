@@ -1,13 +1,15 @@
+//@flow
+
 import React, { PropTypes } from 'react';
 
 import FilterButton from './FilterButton';
 
-const propTypes = {
-    setFilter: PropTypes.func,
-    currentFilter: PropTypes.string,
+type Props = {
+    setFilter: Function,
+    currentFilter: string,
 }
 
-const FilterGroup = ({setFilter, currentFilter}) => (
+const FilterGroup = ({setFilter, currentFilter} : Props) => (
     <div className="filter-group">
         <FilterButton
             onClick={() => setFilter('all')}

@@ -1,3 +1,4 @@
+// @flow
 import React, { Component } from 'react';
 
 import './styles.css';
@@ -5,8 +6,25 @@ import TodoList from './TodoList';
 import AddTodoGroup from './AddTodoGroup';
 import FilterGroup from './FilterGroup';
 
+type Todo = {
+    id: string,
+    completed: boolean,
+    title: string,
+}
+
+type TodoMap = {
+    [key:string] : Todo,
+}
+
+type State = {
+    todos: TodoMap,
+    filter: string,
+}
+
 class TodoApp extends Component {
-    constructor(props) {
+    state: State;
+
+    constructor(props: any) {
         super(props);
         this.state = {
             todos: {
@@ -17,15 +35,10 @@ class TodoApp extends Component {
                 }
             },
             filter: 'all',
-        }
-
-        this.toggleTodo = this.toggleTodo.bind(this);
-        this.deleteTodo = this.deleteTodo.bind(this);
-        this.addTodo = this.addTodo.bind(this);
-        this.setFilter = this.setFilter.bind(this);
+        } 
     }
 
-    toggleTodo(id) {
+    toggleTodo = (id: string) => {
         const todos = this.state.todos;
         this.setState({
             todos: {
@@ -38,7 +51,7 @@ class TodoApp extends Component {
         })
     }
 
-    deleteTodo(id) {
+    deleteTodo = (id: string) => {
         const {
             [id]: _,
             ...todosWithoutId
@@ -46,7 +59,7 @@ class TodoApp extends Component {
         this.setState({ todos: todosWithoutId });
     }
 
-    addTodo(title) {
+    addTodo = (title: string) => {
         const id = Date.now().toString();
         this.setState({
             todos: {
@@ -60,13 +73,12 @@ class TodoApp extends Component {
         });
     }
 
-    setFilter(filter) {
+    setFilter = (filter: string) => {
         this.setState({ filter })
     }
 
     getFilteredTodos() {
-        const todos = this.state.todos;
-        const filter = this.state.filter;
+        const { todos, filter } = this.state;
 
         if (filter === 'all') {
             return todos;
@@ -88,8 +100,8 @@ class TodoApp extends Component {
                     deleteTodo={this.deleteTodo}
                 />
                 <FilterGroup
-                    currentFilter={this.state.filter}
                     setFilter={this.setFilter}
+                    currentFilter={this.state.filter}
                 />
             </div>
         );

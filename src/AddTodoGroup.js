@@ -1,16 +1,12 @@
-//@flow
+// @flow
 
 import React, { PropTypes } from 'react';
-
-const propTypes = {
-    addTodo: PropTypes.number,
-}
 
 const AddTodoGroup = ({addTodo} : {addTodo : Function}) => (
     <form className="add-todo-group" onSubmit={
         e => {
             e.preventDefault();
-            const todo = e.target.addTodo.value;
+            const todo : string = e.target.addTodo.value;
 
             if(todo.trim() === '') {
                 alert('Please enter a todo title.');
