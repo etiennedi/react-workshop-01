@@ -35,7 +35,7 @@ class TodoApp extends Component {
                 }
             },
             filter: 'all',
-        } 
+        }
     }
 
     toggleTodo = (id: string) => {
