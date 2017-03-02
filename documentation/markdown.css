@@ -1,0 +1,10 @@
+body, code {
+    font-size: 10px;
+    line-height: 1.3;
+}
+code, pre {
+    page-break-inside: avoid;
+}
+h1,h2,h3,h4,h5,h6 {
+    page-break-after: avoid;
+}
