@@ -2,6 +2,8 @@
 
 ## Lesson 1
 
+### Goal: Create declerative components with differing behavior based on props.
+
 - Implement a `Likes` component
   - with a `likes` prop
   - shows a `BlueLike` component when `likes > 0`
@@ -15,6 +17,8 @@
 
 ## Lesson 2
 
+### Goal: Seperate stateful and presentational components.
+
 - Remove the `likes` prop from `Likes` component
 - Add a likes state which is initially 0 (Hint: You need a stateful component now)
 - Add a click-handler which increases the state
@@ -26,6 +30,8 @@
 
 ## Lesson 3
 
+### Goal: Add PropType validation and default prop values.
+
 - Add propType validation for like button
   - Modify one of the props and see the error in the browser
 - Add a default clickHandler to the `LikeButton`
@@ -34,6 +40,8 @@
 
 
 ## Lesson 4
+
+### Goal: Write unit tests for React components.
 
 - Add Unit tests for the `LikeButton` component
 - Make sure the file is covered 100% (branch, statemens, lines)
@@ -44,6 +52,8 @@
   - **it** has a blue background color when likes > 0
 
 ## Lesson 5
+
+### Goal: Build a working todo app.
 
 To get started please checkout `origin/before-lesson-05`.
 
@@ -66,6 +76,8 @@ To get started please checkout `origin/before-lesson-05`.
 - **Remebmer**: State is immutable. Don't accidentaly mutate the state. this.state.todos.push() is an anti-pattern! Props.todos.push is even worse! Think about data-flow in react apps.
 
 ## Lesson 6
+
+### Goal: Improve Data organization and add filtering abilities in our todo app.
 
 ![](images/todoAppFilter.png "Todo App after lesson 6") ![](images/todoAppFilterHighlights.png "Todo App with components highlighted")
 
