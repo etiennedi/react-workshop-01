@@ -16,17 +16,18 @@ type Props = {
   deleteTodo: Function,
   toggleTodo: Function,
   setFilter: Function,
-  todos: Function,
+  todos: Object,
   filter: string,
 }
 
-const getFilteredTodos = (todos: Object, filter: string) : Array<*> => {
+const getFilteredTodos = (originalTodos: Object, filter: string) : Array<*> => {
+  const todos = Object.keys(originalTodos)
+    .map(key => originalTodos[key]);
+
   if (filter === 'all') {
     return todos;
   }
-  return Object.keys(todos)
-    .map(key => todos[key])
-    .filter(todo => todo.completed === (filter === 'completed' && filter !== 'open'));
+  return todos.filter(todo => todo.completed === (filter === 'completed' && filter !== 'open'));
 };
 
 const TodoApp = ({

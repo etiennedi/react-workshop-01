@@ -10,7 +10,7 @@ type Props = {
     deleteTodo: Function,
 };
 
-const TodoList = ({ todos, toggleTodo, deleteTodo } : Props) => (
+const TodoList = ({ todos = [], toggleTodo, deleteTodo } : Props) => (
   <div>
     {
       todos

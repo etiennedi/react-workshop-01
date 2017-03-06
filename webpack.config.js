@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   context: path.resolve(__dirname, './src'),
   entry: {
-    app: './app.js',
+    app: './app.jsx',
   },
   output: {
     path: path.resolve(__dirname, './dist'),
@@ -14,10 +14,13 @@ module.exports = {
     compress: true,
     port: 9000,
   },
+  resolve: {
+    extensions: ['.js', '.jsx'],
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel-loader',
       },
       {
