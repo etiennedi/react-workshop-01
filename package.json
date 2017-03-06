@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server",
+    "lint": "eslint .",
     "test": "jest"
   },
   "repository": {
@@ -20,6 +21,7 @@
   "devDependencies": {
     "@types/jest": "^18.1.1",
     "babel-core": "^6.23.1",
+    "babel-eslint": "^7.1.1",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.23.0",
@@ -29,6 +31,12 @@
     "babel-preset-stage-0": "^6.22.0",
     "css-loader": "^0.26.1",
     "enzyme": "^2.7.1",
+    "eslint": "^3.17.0",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-flowtype": "^2.30.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
     "jest": "^19.0.2",
     "react-addons-test-utils": "^15.4.2",
     "style-loader": "^0.13.1",
@@ -36,6 +44,7 @@
     "webpack-dev-server": "^2.4.1"
   },
   "dependencies": {
+    "eslint": "^3.17.0",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",
