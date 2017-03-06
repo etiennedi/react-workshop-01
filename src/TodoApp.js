@@ -1,100 +1,59 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
 import './styles.css';
 import TodoList from './TodoList';
 import AddTodoGroup from './AddTodoGroup';
 import FilterGroup from './FilterGroup';
+import { addTodo, deleteTodo, toggleTodo } from './ducks/todos'
+import { setFilter } from './ducks/filter'
 
-class TodoApp extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            todos: {
-                'sample': {
-                    title: 'I am a sample todo',
-                    completed: false,
-                    id: 'sample',
-                }
-            },
-            filter: 'all',
-        }
-
-        this.toggleTodo = this.toggleTodo.bind(this);
-        this.deleteTodo = this.deleteTodo.bind(this);
-        this.addTodo = this.addTodo.bind(this);
-        this.setFilter = this.setFilter.bind(this);
+const getFilteredTodos = (todos, filter) => {
+    if (filter === 'all') {
+        return todos;
     }
-
-    toggleTodo(id) {
-        const todos = this.state.todos;
-        this.setState({
-            todos: {
-                ...todos,
-                [id]: {
-                    ...todos[id],
-                    completed: !todos[id].completed
-                },
-            }
-        })
-    }
-
-    deleteTodo(id) {
-        const {
-            [id]: _,
-            ...todosWithoutId
-        } = this.state.todos;
-        this.setState({ todos: todosWithoutId });
-    }
-
-    addTodo(title) {
-        const id = Date.now().toString();
-        this.setState({
-            todos: {
-                ...this.state.todos,
-                [id]: {
-                    title,
-                    completed: false,
-                    id,
-                }
-            }
-        });
-    }
-
-    setFilter(filter) {
-        this.setState({ filter })
-    }
-
-    getFilteredTodos() {
-        const todos = this.state.todos;
-        const filter = this.state.filter;
-
-        if (filter === 'all') {
-            return todos;
-        }
-
-        return Object.keys(todos)
-            .map(key => todos[key])
-            .filter(todo => todo.completed === (filter === 'completed' && filter !== 'open'))
-    }
-
-    render() {
-        return (
-            <div className="todo-app">
-                <h1 className="headline">TODO-App</h1>
-                <AddTodoGroup addTodo={this.addTodo} />
-                <TodoList
-                    todos={this.getFilteredTodos()}
-                    toggleTodo={this.toggleTodo}
-                    deleteTodo={this.deleteTodo}
-                />
-                <FilterGroup
-                    currentFilter={this.state.filter}
-                    setFilter={this.setFilter}
-                />
-            </div>
-        );
-    }
+    return Object.keys(todos)
+        .map(key => todos[key])
+        .filter(todo => todo.completed === (filter === 'completed' && filter !== 'open'))
 }
 
-export default TodoApp;
+const TodoApp = ({
+    addTodo,
+    deleteTodo,
+    toggleTodo,
+    setFilter,
+    todos,
+    filter
+}) => (
+        <div className="todo-app">
+            <h1 className="headline">TODO-App</h1>
+            <AddTodoGroup addTodo={addTodo} />
+            <TodoList
+                todos={getFilteredTodos(todos, filter)}
+                toggleTodo={toggleTodo}
+                deleteTodo={deleteTodo}
+            />
+            <FilterGroup
+                currentFilter={filter}
+                setFilter={setFilter}
+            />
+        </div>
+    );
+
+const mapStateToProps = state => ({
+    todos: state.todos,
+    filter: state.filter,
+});
+
+const mapDispatchToProps = dispatch =>
+    bindActionCreators({
+        addTodo,
+        deleteTodo,
+        toggleTodo,
+        setFilter,
+    }, dispatch)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoApp);
 

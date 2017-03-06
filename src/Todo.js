@@ -15,7 +15,7 @@ const Todo = ({ completed, title, id, toggleTodo, deleteTodo }) => (
             name={`todo_${id}`}
             type="checkbox"
             checked={completed}
-            onClick={() => { toggleTodo(id) }}
+            onChange={() => { toggleTodo(id) }}
         />
         <label
             className="todo-text"
