@@ -1,6 +1,15 @@
+// @flow
+
 const SET = 'todo-app/filter/set';
 
-export default function reducer(state = 'all', action) {
+type State = string;
+type FilterAction = {
+  type: string,
+  filterBy: string,
+}
+
+
+export default function reducer(state: State = 'all', action: FilterAction) {
   switch (action.type) {
     case SET:
       return action.filterBy;
@@ -10,6 +19,6 @@ export default function reducer(state = 'all', action) {
   }
 }
 
-export function setFilter(filterBy) {
+export function setFilter(filterBy: string) : FilterAction {
   return { type: SET, filterBy };
 }
