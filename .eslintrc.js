@@ -9,7 +9,10 @@ module.exports = {
     ],
     "env": {
         "browser": true,
+        "jest": true,
     },
     "rules": {
-      "react/jsx-max-props-per-line" : ["error", { "maximum": 1 }] }
+      "react/jsx-max-props-per-line" : ["error", { "maximum": 1 }],
+      "import/no-extraneous-dependencies": 0,
+    }
 };
