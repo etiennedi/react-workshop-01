@@ -48,7 +48,7 @@ export const ContactForm = ({ handleSubmit }) => (
         <label htmlFor="newsletter">
           Subscribe to newsletter
         </label>
-        </div>
+      </div>
       <button type="submit">Submit</button>
     </div>
   </form>

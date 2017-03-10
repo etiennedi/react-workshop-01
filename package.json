@@ -67,7 +67,9 @@
     "collectCoverageFrom": [
       "src/**/*.{js,jsx,ts}",
       "!**/node_modules/**",
-      "!**/out/**"
+      "!**/out/**",
+      "!src/ducks/index.js",
+      "!src/app.jsx"
     ]
   }
 }

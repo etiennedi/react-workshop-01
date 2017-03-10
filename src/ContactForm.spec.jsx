@@ -5,7 +5,7 @@ import { ContactForm } from './ContactForm';
 
 describe('Main Form', () => {
   it('should render 5 Redux Form fields', () => {
-    const component = shallow(<ContactForm />);
+    const component = shallow(<ContactForm handleSubmit={jest.fn()} />);
     expect(component.find('Field').length).toEqual(5);
   });
 });
