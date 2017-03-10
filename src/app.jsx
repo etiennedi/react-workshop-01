@@ -7,14 +7,14 @@ import { createStore } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 
-import TodoApp from './TodoApp';
 import reducers from './ducks';
+import Form from './ContactForm';
 
 const store = createStore(reducers, composeWithDevTools());
 
 ReactDOM.render(
   <Provider store={store}>
-    <TodoApp />
+    <Form />
   </Provider>,
   document.getElementById('app-root'),
 );
