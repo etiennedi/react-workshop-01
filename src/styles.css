@@ -11,12 +11,18 @@ html {
 }
 
 body {
-  padding: 15px 30px;
+  padding: 0;
+  margin: 0;
   background: #f0efe9;
   color: #333;
 }
 
-form {
+p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.content {
   max-width: 960px;
   margin: 0 auto;
   background: #fff;
@@ -84,4 +90,34 @@ button {
   margin-top: 5px;
   font-size: 14px;
   color: red;
+}
+
+.navigation {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-around;
+  background: #24292e;
+  color: rgba(255,255,255,0.75);
+}
+
+.navigation li {
+  display: inline-block;
+  width: 100%;
+}
+
+.navigation a {
+  display: inline-block;
+  width: 100%;
+  color: rgba(255,255,255,0.75);
+  padding: 20px;
+  text-decoration: none;
+  text-align: center;
+}
+
+.navigation a.active {
+  font-weight: bold;
+  background: #f68a1f;
+
 }
