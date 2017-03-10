@@ -24,14 +24,22 @@ form {
   box-shadow: 0 3px 45px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.06);
 }
 
+h1 {
+  margin: 0 0 20px 0;
+}
+
 input:not(.checkbox), textarea {
   display: block;
   width: 100%;
-  margin-bottom: 20px;
   border-radius: 5px;
   border: 1px solid #d6d6d6;
   padding: 10px;
   font-size: 16px;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  margin-right: 10px;
 }
 
 textarea {
@@ -55,4 +63,25 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+.textfield-wrapper {
+  margin-bottom: 20px;
+}
+
+.textfield-error input,
+.textfield-error textarea {
+  border-color: red;
+}
+
+.error {
+  display: inline-block;
+  margin-top: 5px;
+  font-size: 14px;
+  color: red;
 }

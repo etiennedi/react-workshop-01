@@ -1,5 +1,7 @@
 import React, { PropTypes } from 'react';
 import { Field, reduxForm } from 'redux-form';
+import { required, email, maxLength } from './validators';
+import Textfield from './Textfield';
 
 const propTypes = {
   handleSubmit: PropTypes.func.isRequired,
@@ -10,19 +12,28 @@ export const ContactForm = ({ handleSubmit }) => (
     <h1>Contact Form</h1>
     <Field
       name="name"
-      component="input"
+      label="Name"
+      component={Textfield}
+      validate={required}
     />
     <Field
       name="email"
-      component="input"
+      label="E-Mail"
+      component={Textfield}
+      validate={[required, email]}
     />
     <Field
       name="subject"
-      component="input"
+      label="Subject"
+      component={Textfield}
+      validate={[required, maxLength(10)]}
     />
     <Field
       name="message"
-      component="textarea"
+      label="Message"
+      component={Textfield}
+      multiLine
+      validate={required}
     />
     <div className="action">
       <div className="checkbox-wrapper">
