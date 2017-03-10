@@ -1,10 +1,6 @@
 import { combineReducers } from 'redux';
-
-import filter from './filter';
-import todos from './todos';
+import { reducer as formReducer } from 'redux-form';
 
 export default combineReducers({
-  filter,
-  todos,
+  form: formReducer,
 });
-
