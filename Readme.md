@@ -120,3 +120,7 @@ To get started please checkout `origin/before-lesson-05`.
   - Make sure errors are only shown if the field is touched
   - Highlight the error string output in red
   - Give the field a red border on error
+- Make sure everything is tested
+
+This is what your test coverage could look like after this lesson:
+!["Coverage after Lessson 09"](images/lesson09-coverage.png)
