@@ -88,3 +88,35 @@ To get started please checkout `origin/before-lesson-05`.
 
 *Note: To see how the form would look with a controlled component, checkout `origin/lesson-06-with-controlled-component`*
 
+## Lesson 07
+
+- Move all state to Redux
+- All components should be stateless now
+
+## Lesson 08
+
+### Goal: Our very first Redux Form component
+
+- Add a basic form with the following fields:
+  - Name (textfield)
+  - Email (textfield)
+  - Subject (textfield)
+  - Message (textarea)
+  - Newsletter (checkbox)
+- on submit log the values to the console
+- add some styling
+
+## Lesson 09
+
+### Goal: A dynamic, constantly validated form
+
+- Create a couple of validators
+  - all validators return undefined if no error occurred
+  - they return a string (such as "This field is required") if an error occurs
+-Validate theses fields:
+  - Validate all fields for required (i.e. not empty)
+  - Validate email for a valid email (use a simple Regex or a package if you like)
+- Change the component passed to `Field` to an own component which can highlight errors
+  - Make sure errors are only shown if the field is touched
+  - Highlight the error string output in red
+  - Give the field a red border on error
