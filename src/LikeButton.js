@@ -22,4 +22,3 @@ LikeButton.propTypes = propTypes;
 LikeButton.defaultProps = defaultProps;
 
 export default LikeButton;
-
