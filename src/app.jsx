@@ -9,6 +9,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import reducers from './ducks';
 import Form from './ContactForm';
+import './styles.css';
 
 const store = createStore(reducers, composeWithDevTools());
 

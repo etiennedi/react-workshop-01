@@ -7,6 +7,7 @@ const propTypes = {
 
 export const ContactForm = ({ handleSubmit }) => (
   <form onSubmit={handleSubmit}>
+    <h1>Contact Form</h1>
     <Field
       name="name"
       component="input"
@@ -23,12 +24,22 @@ export const ContactForm = ({ handleSubmit }) => (
       name="message"
       component="textarea"
     />
-    <Field
-      name="newsletter"
-      component="input"
-      type="checkbox"
-    />
-    <button type="submit" />
+    <div className="action">
+      <div className="checkbox-wrapper">
+        <Field
+          name="newsletter"
+          id="newsletter"
+          component="input"
+          type="checkbox"
+          className="checkbox"
+        />
+
+        <label htmlFor="newsletter">
+          Subscribe to newsletter
+        </label>
+        </div>
+      <button type="submit">Submit</button>
+    </div>
   </form>
 );
 
