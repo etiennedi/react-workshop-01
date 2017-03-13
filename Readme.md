@@ -105,6 +105,8 @@ To get started please checkout `origin/before-lesson-05`.
   - Newsletter (checkbox)
 - on submit log the values to the console
 - add some styling
+- don't forget the tests
+  - they will be simple, but you should still practice them.
 
 ## Lesson 09
 
