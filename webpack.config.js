@@ -1,4 +1,5 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   context: path.resolve(__dirname, './src'),
@@ -23,11 +24,18 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
       },
       {
         test: /\.css$/,
         use: ['style-loader', 'css-loader'],
+        exclude: /node_modules/,
       },
     ],
   },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: 'index.ejs',
+    }),
+  ],
 };
