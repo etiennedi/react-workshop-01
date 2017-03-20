@@ -139,7 +139,7 @@ This is what your test coverage could look like after this lesson:
 
 ## Lesson 11
 
-### Production-Readyness and Docker Deployment
+### Goal: Production-Readyness and Docker Deployment
 
 - Add WebpackHTMLPlugin to generate an index.html dynamically
 - Add an npm command to trigger a production build
