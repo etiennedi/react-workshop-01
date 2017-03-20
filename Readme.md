@@ -126,3 +126,22 @@ To get started please checkout `origin/before-lesson-05`.
 
 This is what your test coverage could look like after this lesson:
 !["Coverage after Lessson 09"](images/lesson09-coverage.png)
+
+## Lesson 10
+
+### Goal: Client-Side-Routing
+
+- Implement React Router
+- Move the contact form to a '/contact' route
+- Show a home site on '/'
+- Show an about site on '/about'
+- Highlight the currently active item in the navigation
+
+## Lesson 11
+
+### Production-Readyness and Docker Deployment
+
+- Add WebpackHTMLPlugin to generate an index.html dynamically
+- Add an npm command to trigger a production build
+- Install and setup express (or any other webserver) so serve the dist build
+- Add a Dockerfile to build and serve your dist build
