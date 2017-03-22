@@ -1,9 +1,35 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 
-const About = () => (
-  <div>
-    <h1>About</h1>
-  </div>
-);
+import { mounted } from './ducks/pokemon';
 
-export default About;
+export class About extends Component {
+
+  componentWillMount() {
+    this.props.mounted();
+  }
+
+  render() {
+    const { pokemon } = this.props;
+
+    return (
+      <div>
+        <h1>My favorite Pokemon</h1>
+        <ul>
+          {
+            pokemon.map(({ name }) => <li key={name}>{name}</li>)
+          }
+        </ul>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = ({ pokemon }) => ({ pokemon });
+
+const mapDispatchToProps = dispatch => bindActionCreators({
+  mounted,
+}, dispatch);
+
+export default connect(mapStateToProps, mapDispatchToProps)(About);

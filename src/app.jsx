@@ -1,15 +1,15 @@
-// @flow
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import {
   BrowserRouter as Router,
   Route,
   NavLink,
 } from 'react-router-dom';
+import createSagaMiddleware from 'redux-saga';
 
 
 import reducers from './ducks';
@@ -17,8 +17,17 @@ import Contact from './ContactForm';
 import Home from './Home';
 import About from './About';
 import './styles.css';
+import rootSaga from './sagas';
 
-const store = createStore(reducers, composeWithDevTools());
+const sagaMiddleware = createSagaMiddleware();
+
+
+const store = createStore(reducers, composeWithDevTools(
+  applyMiddleware(sagaMiddleware),
+));
+
+sagaMiddleware.run(rootSaga);
+
 
 ReactDOM.render(
   <Provider store={store}>
