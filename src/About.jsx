@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 
 import { mounted } from './ducks/pokemon';
 
@@ -28,8 +27,6 @@ export class About extends Component {
 
 const mapStateToProps = ({ pokemon }) => ({ pokemon });
 
-const mapDispatchToProps = dispatch => bindActionCreators({
-  mounted,
-}, dispatch);
+const mapDispatchToProps = { mounted };
 
 export default connect(mapStateToProps, mapDispatchToProps)(About);
