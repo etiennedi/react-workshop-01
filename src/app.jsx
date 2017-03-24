@@ -1,4 +1,4 @@
-
+import 'rxjs';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
@@ -9,7 +9,8 @@ import {
   Route,
   NavLink,
 } from 'react-router-dom';
-import createSagaMiddleware from 'redux-saga';
+import { createEpicMiddleware } from 'redux-observable';
+// import createSagaMiddleware from 'redux-saga';
 
 
 import reducers from './ducks';
@@ -17,16 +18,20 @@ import Contact from './ContactForm';
 import Home from './Home';
 import About from './About';
 import './styles.css';
-import rootSaga from './sagas';
+// import rootSaga from './sagas';
+import rootEpic from './epics';
 
-const sagaMiddleware = createSagaMiddleware();
+// const sagaMiddleware = createSagaMiddleware();
+
+const epicMiddleware = createEpicMiddleware(rootEpic);
 
 
 const store = createStore(reducers, composeWithDevTools(
-  applyMiddleware(sagaMiddleware),
+  // applyMiddleware(sagaMiddleware),
+  applyMiddleware(epicMiddleware),
 ));
 
-sagaMiddleware.run(rootSaga);
+// sagaMiddleware.run(rootSaga);
 
 
 ReactDOM.render(
