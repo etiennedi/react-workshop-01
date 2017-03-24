@@ -1,6 +1,8 @@
 import { combineEpics } from 'redux-observable';
 import fetchPokemon from './pokemon';
 
-export default combineEpics(
+import * as api from '../api';
+
+export default (...args) => combineEpics(
   fetchPokemon,
-);
+)(...args, { api });

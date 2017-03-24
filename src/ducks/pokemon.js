@@ -1,5 +1,6 @@
 export const MOUNTED = 'workshop/pokemon/mounted';
 export const RECEIVED = 'workshop/pokemon/received';
+export const ERROR = 'workshop/pokemon/error';
 
 export default function reducer(state = [], action) {
   switch (action.type) {
@@ -18,6 +19,11 @@ export default function reducer(state = [], action) {
 
 export const mounted = () => ({
   type: MOUNTED,
+});
+
+export const error = message => ({
+  type: ERROR,
+  message,
 });
 
 export const received = payload => ({
