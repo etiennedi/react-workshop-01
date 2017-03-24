@@ -10,29 +10,19 @@ import {
   NavLink,
 } from 'react-router-dom';
 import { createEpicMiddleware } from 'redux-observable';
-// import createSagaMiddleware from 'redux-saga';
-
 
 import reducers from './ducks';
 import Contact from './ContactForm';
 import Home from './Home';
 import About from './About';
 import './styles.css';
-// import rootSaga from './sagas';
 import rootEpic from './epics';
-
-// const sagaMiddleware = createSagaMiddleware();
 
 const epicMiddleware = createEpicMiddleware(rootEpic);
 
-
 const store = createStore(reducers, composeWithDevTools(
-  // applyMiddleware(sagaMiddleware),
   applyMiddleware(epicMiddleware),
 ));
-
-// sagaMiddleware.run(rootSaga);
-
 
 ReactDOM.render(
   <Provider store={store}>
