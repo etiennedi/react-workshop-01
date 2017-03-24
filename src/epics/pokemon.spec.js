@@ -14,8 +14,9 @@ describe('pokemon epic', () => {
     };
 
     return epicTestHelper(pokemonEpic, mounted(), {}, { api })
-      .then(x => expect(x).toEqual(received(payload)));
+      .then(result => expect(result).toEqual(received(payload)));
   });
+
   it('dispatches an error action', () => {
     const epicError = new Error('Error');
 
@@ -24,6 +25,6 @@ describe('pokemon epic', () => {
     };
 
     return epicTestHelper(pokemonEpic, mounted(), {}, { api })
-      .then(x => expect(x).toEqual(error(epicError)));
+      .then(result => expect(result).toEqual(error(epicError)));
   });
 });
