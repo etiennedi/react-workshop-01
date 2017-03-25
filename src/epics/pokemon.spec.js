@@ -6,25 +6,25 @@ import { mounted, received, error } from '../ducks/pokemon';
 
 
 describe('pokemon epic', () => {
-  it('dispatches a received action with pokemon', () => {
+  it('dispatches a received action with pokemon', async () => {
     const payload = ['pokemon1'];
 
     const api = {
       getPokemon: () => Promise.resolve({ data: { results: payload } }),
     };
 
-    return epicTestHelper(pokemonEpic, mounted(), {}, { api })
-      .then(result => expect(result).toEqual(received(payload)));
+    const result = await epicTestHelper(pokemonEpic, mounted(), {}, { api });
+    expect(result).toEqual([received(payload)]);
   });
 
-  it('dispatches an error action', () => {
+  it('dispatches an error action', async () => {
     const epicError = new Error('Error');
 
     const api = {
       getPokemon: () => Promise.reject(epicError),
     };
 
-    return epicTestHelper(pokemonEpic, mounted(), {}, { api })
-      .then(result => expect(result).toEqual(error(epicError)));
+    const result = await epicTestHelper(pokemonEpic, mounted(), {}, { api });
+    expect(result).toEqual([error(epicError)]);
   });
 });

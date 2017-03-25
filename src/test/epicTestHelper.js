@@ -6,6 +6,7 @@ const epicTestHelper = (epic, action, state = {}, dependencies = {}) => {
   const actions$ = new ActionsObservable(actions);
   const store = { getState: () => state };
   const promiseEpic = epic(actions$, store, dependencies)
+    .toArray()
     .toPromise();
 
   actions.next(action);
