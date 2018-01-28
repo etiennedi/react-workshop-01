@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const propTypes = {
   likes: PropTypes.number,
@@ -22,3 +23,4 @@ LikeButton.propTypes = propTypes;
 LikeButton.defaultProps = defaultProps;
 
 export default LikeButton;
+
