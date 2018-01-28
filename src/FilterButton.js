@@ -10,7 +10,7 @@ const propTypes = {
 const FilterButton = ({onClick, children, active}) => (
     <button
         onClick={onClick}
-        className={active && 'filter-active'}
+        className={active ? 'filter-active' : null}
     >
         {children}
     </button>
