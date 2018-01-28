@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types'
 
 const propTypes = {
     onClick: PropTypes.func,
@@ -9,7 +10,7 @@ const propTypes = {
 const FilterButton = ({onClick, children, active}) => (
     <button
         onClick={onClick}
-        className={active && 'filter-active'}
+        className={active ? 'filter-active' : null}
     >
         {children}
     </button>
