@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import LikeButton from './LikeButton';
 
 describe('LikeButton', () => {
-    it('display the number of likes in the text output', () => {
+    it('displays the number of likes in the text output', () => {
         const component = shallow(
             <LikeButton
                 likes={10}
